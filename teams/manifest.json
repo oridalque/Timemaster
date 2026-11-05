@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.1.0",
+  "id": "9141ac09-ae04-4ed3-9e7f-9ae3bba88737",
+  "developer": {
+    "name": "Génération Conseil",
+    "websiteUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/",
+    "privacyUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/",
+    "termsOfUseUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/"
+  },
+  "name": {
+    "short": "Gardien du temps",
+    "full": "Gardien du temps – timer de réunion par phases"
+  },
+  "description": {
+    "short": "Timer visuel découpé en phases colorées pour tenir le temps des réunions.",
+    "full": "Affiche une horloge segmentée en phases (jusqu'à 20) proportionnelles à leur durée, chacune d'une couleur. Synchronisée en temps réel entre les participants d'une réunion (Live Share) : l'organisateur et les présentateurs pilotent, tout le monde suit."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#2F55D4",
+  "staticTabs": [
+    {
+      "entityId": "gardien-du-temps",
+      "name": "Timer",
+      "contentUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/index.html",
+      "websiteUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/index.html",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://VOTRE-DOMAINE.github.io/gardien-du-temps/config.html",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupChat"
+      ],
+      "context": [
+        "channelTab",
+        "privateChatTab",
+        "meetingChatTab",
+        "meetingDetailsTab",
+        "meetingSidePanel",
+        "meetingStage"
+      ],
+      "meetingSurfaces": [
+        "sidePanel",
+        "stage"
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "VOTRE-DOMAINE.github.io"
+  ],
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "LiveShareSession.ReadWrite.Chat",
+          "type": "Delegated"
+        },
+        {
+          "name": "LiveShareSession.ReadWrite.Group",
+          "type": "Delegated"
+        },
+        {
+          "name": "MeetingStage.Write.Chat",
+          "type": "Delegated"
+        },
+        {
+          "name": "ChannelMeetingStage.Write.Group",
+          "type": "Delegated"
+        }
+      ]
+    }
+  }
+}
