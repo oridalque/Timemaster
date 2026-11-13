@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gardien du temps – configuration</title>
+<style>body{font-family:"Segoe UI",system-ui,sans-serif;margin:0;padding:24px;}</style>
+<script src="MicrosoftTeams.min.js"></script>
+</head>
+<body>
+<h2>Gardien du temps</h2>
+<p>Cliquez sur <strong>Enregistrer</strong> pour ajouter le timer. Les phases se paramètrent ensuite depuis le bouton « Paramétrer ».</p>
+<script>
+microsoftTeams.app.initialize().then(function () {
+  var base = location.origin + location.pathname.replace(/config\.html$/, '');
+  microsoftTeams.pages.config.registerOnSaveHandler(function (evt) {
+    microsoftTeams.pages.config.setConfig({
+      entityId: 'gardien-du-temps', suggestedDisplayName: 'Gardien du temps',
+      contentUrl: base + 'index.html', websiteUrl: base + 'index.html'
+    }).then(function () { evt.notifySuccess(); });
+  });
+  microsoftTeams.pages.config.setValidityState(true);
+});
+</script>
+</body>
+</html>
